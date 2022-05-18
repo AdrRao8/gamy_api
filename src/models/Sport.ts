@@ -1,4 +1,5 @@
 import { BaseEntity, Column, Entity, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Level } from "./Level";
 import { Player } from "./Player";
 import { Position } from "./Position";
 import { PreEvent } from "./PreEvent";
@@ -13,7 +14,9 @@ export class Sport extends BaseEntity{
     @Column()
     description: string
   
-    @Column()
+    @Column({
+        nullable: true,
+    })
     capacity: number
 
     @OneToMany(() => Position, (position) => position.sport)
@@ -24,4 +27,7 @@ export class Sport extends BaseEntity{
 
     @OneToOne(()=>PreEvent)
     preEvent: PreEvent;
+
+    @OneToMany(() => Level, (level) => level.sport)
+    level: Level[]
 }
