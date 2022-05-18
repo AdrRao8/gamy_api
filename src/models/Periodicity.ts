@@ -1,4 +1,4 @@
-import { BaseEntity, Column, Entity, ManyToOne, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { PreEvent } from "./PreEvent";
 
 @Entity()

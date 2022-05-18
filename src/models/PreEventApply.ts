@@ -1,4 +1,4 @@
-import { BaseEntity, Column, Entity,JoinColumn,JoinTable,ManyToMany,OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity,JoinColumn,OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Player } from "./Player";
 import { PreEvent } from "./PreEvent";
 import { State } from "./State";

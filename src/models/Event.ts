@@ -1,4 +1,4 @@
-import { BaseEntity, Column, Entity,JoinColumn,JoinTable,ManyToMany,OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity,JoinColumn,OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Periodicity } from "./Periodicity";
 import { PlayerList } from "./PlayerList";
 import { Sport } from "./Sport";

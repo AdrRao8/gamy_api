@@ -1,11 +1,9 @@
-import { BaseEntity, Column, Entity,JoinColumn,ManyToOne,OneToMany,OneToOne, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
-import { Availability } from "./Availability";
+import { BaseEntity, Column, Entity,ManyToOne,OneToMany,PrimaryGeneratedColumn } from "typeorm";
 import { Level } from "./Level";
 import { Person } from "./Person";
 import { PlayerList } from "./PlayerList";
 import { Position } from "./Position";
 import { Sport } from "./Sport";
-import { User } from "./User";
 import { Valuation } from "./Valuation";
 
 @Entity()
