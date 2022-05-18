@@ -33,4 +33,7 @@ export class Player extends BaseEntity{
     @ManyToOne(() => Valuation, (valuation) => valuation.player)
     valuation: Valuation
 
+    @OneToOne(() => Player)
+    player: Player;
+
 }

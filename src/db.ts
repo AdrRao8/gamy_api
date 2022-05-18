@@ -1,8 +1,4 @@
 import { createConnection } from "typeorm";
-/*import { Club } from "./models/Club";
-import { Court } from "./models/Court";
-import { CourtType } from "./models/CourtType";
-import { Rental } from "./models/Rental";*/
 import { User } from "./models/User";
 import { UserType } from "./models/UserType";
 import {Person} from "./models/Person";
@@ -14,6 +10,11 @@ import { Turn } from "./models/Turn";
 import { Position } from "./models/Position";
 import { Availability } from "./models/Availability";
 import { Player } from "./models/Player";
+import { Address } from "./models/Address";
+import { PreEvent } from "./models/PreEvent";
+import { Periodicity } from "./models/Periodicity";
+import { State } from "./models/State";
+import { EventApply } from "./models/EventApply";
 
 export const connectDatabase = async () => {
   try {
@@ -25,7 +26,7 @@ export const connectDatabase = async () => {
       host: process.env.DB_HOST,
       port: Number(process.env.DB_PORT),
       synchronize: true,
-      entities: [/*Court, CourtType, Club,Rental*/ User, UserType, Person, Sport,Day,Level,Valuation, Turn,Position,Availability,Player],
+      entities: [User, UserType, Person, Sport,Day,Level,Valuation, Turn,Position,Availability,Player,Address,PreEvent,Periodicity,State,EventApply],
       ssl: false,
     });
     console.log("Database connected");

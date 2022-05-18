@@ -1,4 +1,5 @@
 import { BaseEntity, Column, Entity,JoinColumn,OneToMany,OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Address } from "./Address";
 import { Availability } from "./Availability";
 import { Player } from "./Player";
 import { User } from "./User";
@@ -38,4 +39,7 @@ export class Person extends BaseEntity{
 
     @OneToMany(() => Availability, (availability) => availability.person)
     availability: Availability[]
+
+    @OneToMany(() => Address, (address) => address.person)
+    addresses: Address[]
 }
