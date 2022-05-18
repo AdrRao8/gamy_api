@@ -11,8 +11,13 @@ export const findAll = async (req: Request, res: Response) => {
   }
 };
 
-export const findOne = (req: Request, res: Response) => {
-  res.send("find one user");
+export const findOne = async (req: Request, res: Response) => {
+  try {
+      const user = await User.findOne(req.params.id);
+      res.status(200).json(user);
+    } catch (error) {
+      res.status(400).json(error);
+    }
 };
 
 export const update = (req: Request, res: Response) => {
