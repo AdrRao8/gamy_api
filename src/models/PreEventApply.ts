@@ -4,7 +4,7 @@ import { PreEvent } from "./PreEvent";
 import { State } from "./State";
 
 @Entity()
-export class EventApply extends BaseEntity{
+export class PreEventApply extends BaseEntity{
     @PrimaryGeneratedColumn()
     id!: number
 

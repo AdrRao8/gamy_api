@@ -1,5 +1,5 @@
 import { BaseEntity, Column, Entity, OneToOne, PrimaryGeneratedColumn } from "typeorm";
-import { EventApply } from "./EventApply";
+import { PreEventApply } from "./PreEventApply";
 import { PreEvent } from "./PreEvent";
 
 @Entity()
@@ -15,7 +15,7 @@ export class State extends BaseEntity{
     @OneToOne(() => PreEvent)
     preEvent: PreEvent;
 
-    @OneToOne(() => EventApply)
-    eventApply: EventApply;
+    @OneToOne(() => PreEventApply)
+    eventApply: PreEventApply;
 
 }

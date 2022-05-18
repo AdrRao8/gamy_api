@@ -14,7 +14,9 @@ import { Address } from "./models/Address";
 import { PreEvent } from "./models/PreEvent";
 import { Periodicity } from "./models/Periodicity";
 import { State } from "./models/State";
-import { EventApply } from "./models/EventApply";
+import { PreEventApply } from "./models/PreEventApply";
+import { PlayerList } from "./models/PlayerList";
+import { Event } from "./models/Event";
 
 export const connectDatabase = async () => {
   try {
@@ -26,7 +28,9 @@ export const connectDatabase = async () => {
       host: process.env.DB_HOST,
       port: Number(process.env.DB_PORT),
       synchronize: true,
-      entities: [User, UserType, Person, Sport,Day,Level,Valuation, Turn,Position,Availability,Player,Address,PreEvent,Periodicity,State,EventApply],
+      entities: [User, UserType, Person, Sport,Day,Level,Valuation, 
+        Turn,Position,Availability,Player,Address,PreEvent,Periodicity,
+        State,PreEventApply,PlayerList,Event],
       ssl: false,
     });
     console.log("Database connected");

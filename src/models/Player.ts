@@ -2,6 +2,7 @@ import { BaseEntity, Column, Entity,JoinColumn,ManyToOne,OneToMany,OneToOne, Pri
 import { Availability } from "./Availability";
 import { Level } from "./Level";
 import { Person } from "./Person";
+import { PlayerList } from "./PlayerList";
 import { Position } from "./Position";
 import { Sport } from "./Sport";
 import { User } from "./User";
@@ -32,8 +33,8 @@ export class Player extends BaseEntity{
 
     @ManyToOne(() => Valuation, (valuation) => valuation.player)
     valuation: Valuation
-
-    @OneToOne(() => Player)
-    player: Player;
+    
+    @OneToMany(() => PlayerList, (playerList) => playerList.player)
+    playerList: PlayerList[]
 
 }

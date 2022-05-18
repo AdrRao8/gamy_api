@@ -1,13 +1,11 @@
 import { BaseEntity, Column, Entity,JoinColumn,JoinTable,ManyToMany,OneToOne, PrimaryGeneratedColumn } from "typeorm";
-import { PreEventApply } from "./PreEventApply";
 import { Periodicity } from "./Periodicity";
-import { Player } from "./Player";
 import { PlayerList } from "./PlayerList";
 import { Sport } from "./Sport";
 import { State } from "./State";
 
 @Entity()
-export class PreEvent extends BaseEntity{
+export class Event extends BaseEntity{
     @PrimaryGeneratedColumn()
     id!: number
 
@@ -43,13 +41,8 @@ export class PreEvent extends BaseEntity{
     @OneToOne(() => Periodicity)
     @JoinColumn()
     periodicity: Periodicity;
-
-    @OneToOne(() => Player)
-    preEvent: PreEvent;
-   
-    @OneToOne(() => PreEventApply)
-    eventApply: PreEventApply;
-
+  
     @OneToOne(() => PlayerList)
     playerList: PlayerList;
 }
+
